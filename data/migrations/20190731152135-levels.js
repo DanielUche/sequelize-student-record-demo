@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'students',
+      'levels',
       {
         id: {
           type: Sequelize.UUID,
@@ -13,7 +13,7 @@ module.exports = {
           autoIncrement: false,
         },
         name: Sequelize.STRING,
-        level_id: {
+        teacher_id: {
           type: Sequelize.UUID,
         },
       },
@@ -22,7 +22,8 @@ module.exports = {
       },
     );
   },
+
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('students');
+    return queryInterface.dropTable('levels');
   },
 };
